@@ -1,22 +1,27 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
+# require 'pp'
+require 'pry'
 
 def directors_totals(nds)
-  # Remember, it's always OK to pretty print what you get *in* to make sure
-  # that you know what you're starting with!
-  #
-  #
-  # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
-  result = {
-  }
-  #
-  # Use loops, variables and the accessing method, [], to loop through the NDS
-  # and total up all the
-  # ...
-  # ...
-  # ...
-  #
-  #
-  # Be sure to return the result at the end!
-  nil
+  directors_hash = {}
+  row_index = 0
+  while row_index < nds.length do
+  # binding.pry
+    column_index = 0
+    directors_total = 0
+    director_name = nds[row_index][:name] 
+    directors_hash[director_name] = 0
+    inner_length = nds[row_index][:movies].length
+    inner_index = 0
+      while inner_index < inner_length do
+        directors_total += nds[row_index][:movies][inner_index][:worldwide_gross]
+        directors_hash[director_name] = directors_total
+        inner_index += 1
+      end
+    column_index += 1
+  # puts directors_total
+  row_index += 1
+  end
+  directors_hash
 end
