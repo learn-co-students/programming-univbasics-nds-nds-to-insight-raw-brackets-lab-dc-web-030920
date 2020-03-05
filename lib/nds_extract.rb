@@ -30,24 +30,7 @@ def directors_totals(nds)
       
   row_index +=1
   end
-     
-     
-  # row_index = 0 
-  # while row_index < nds[row_index][:name].length do
-  #   director = nds[row_index][:name]
-  #   puts director
-  #   column_index = 0 
-  #   gross_income = 0 
-  #   while column_index < nds [row_index][:movies].length do
-  #     gross_income += nds[row_index][:movies][column_index][:worldwide_gross]
-  #     column_index += 1 
-  #   end
-  #   puts gross_income
-  #   #result[director] = gross_income
-    
-  #   row_index += 1 
-  # end
-    
+
 
   return result
 end
